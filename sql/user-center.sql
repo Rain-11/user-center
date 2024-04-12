@@ -1,4 +1,4 @@
-create table if not exists crazy_rain_center.user
+create table if not exists user
 (
     id           bigint auto_increment comment '用户id'
         primary key,

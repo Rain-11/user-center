@@ -20,6 +20,10 @@ public class ResultUtil {
         return new BaseResponse<>(message, code, data, "");
     }
 
+    public static <T> BaseResponse<T> success() {
+        return new BaseResponse<>(ErrorCode.SUCCESS.getMessage(), ErrorCode.SUCCESS.getCode(), null, "");
+    }
+
     public static <T> BaseResponse<T> error(ErrorCode errorCode, String details) {
         return new BaseResponse<>(errorCode.getMessage(), errorCode.getCode(), null, details);
     }
@@ -27,5 +31,6 @@ public class ResultUtil {
     public static <T> BaseResponse<T> error(Integer code, String message, String details) {
         return new BaseResponse<>(message, code, null, details);
     }
+
 
 }

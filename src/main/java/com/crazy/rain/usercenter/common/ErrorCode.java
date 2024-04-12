@@ -1,11 +1,14 @@
 package com.crazy.rain.usercenter.common;
 
+import lombok.Getter;
+
 /**
  * 全局返回信息类
  *
  * @author CrazyRain
  */
 
+@Getter
 public enum ErrorCode {
 
     /**
@@ -25,14 +28,6 @@ public enum ErrorCode {
     ErrorCode(Integer code, String message) {
         this.code = code;
         this.message = message;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getMessage() {
-        return message;
     }
 
 }

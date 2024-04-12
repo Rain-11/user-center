@@ -16,6 +16,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BaseResponse<T> implements Serializable {
+
     private String message;
     private Integer code;
     private T data;
