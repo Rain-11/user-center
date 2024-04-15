@@ -7,6 +7,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.regex.Pattern;
 
 /**
  * @ClassName: EmailUtils
@@ -33,5 +34,13 @@ public class EmailUtils {
         mailSender.send(msg);
         return code;
     }
+
+    public boolean isValidEmail(String email) {
+        if ((email != null) && (!email.isEmpty())) {
+            return Pattern.matches("^(\\w+([-.][A-Za-z0-9]+)*){3,18}@\\w+([-.][A-Za-z0-9]+)*\\.\\w+([-.][A-Za-z0-9]+)*$", email);
+        }
+        return false;
+    }
+
 
 }

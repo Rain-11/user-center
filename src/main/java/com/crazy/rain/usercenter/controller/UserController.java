@@ -9,6 +9,7 @@ import com.crazy.rain.usercenter.common.ErrorCode;
 import com.crazy.rain.usercenter.common.ResultUtil;
 import com.crazy.rain.usercenter.exception.BasisException;
 import com.crazy.rain.usercenter.model.domain.User;
+import com.crazy.rain.usercenter.model.dto.EmailRegistrationDto;
 import com.crazy.rain.usercenter.model.dto.QueryUserByTag;
 import com.crazy.rain.usercenter.model.request.*;
 import com.crazy.rain.usercenter.model.vo.PageVo;
@@ -265,7 +266,15 @@ public class UserController {
     @GetMapping("/sendVerificationCode")
     @Operation(summary = "获取验证码")
     public BaseResponse<Integer> sendVerificationCode(String email) {
+        log.info("获取验证码:{}", email);
         return ResultUtil.success(userService.sendVerificationCode(email));
+    }
+
+    @PostMapping("/emailRegistration")
+    @Operation(summary = "邮箱注册")
+    public BaseResponse<Long> emailRegistration(@RequestBody EmailRegistrationDto emailRegistrationDto) {
+        log.info("邮箱注册:{}", emailRegistrationDto);
+        return ResultUtil.success(userService.emailRegistration(emailRegistrationDto));
     }
 
 }
