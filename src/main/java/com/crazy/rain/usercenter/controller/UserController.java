@@ -262,5 +262,10 @@ public class UserController {
         return ResultUtil.success(userService.userRecommendations(pageRequest, request));
     }
 
+    @GetMapping("/sendVerificationCode")
+    @Operation(summary = "获取验证码")
+    public BaseResponse<Integer> sendVerificationCode(String email) {
+        return ResultUtil.success(userService.sendVerificationCode(email));
+    }
 
 }
