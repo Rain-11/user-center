@@ -9,7 +9,7 @@ spring:
     #发送邮件的账户
     username: 17888791667@163.com
     #授权码
-    password: FNBJRUXZTKMREPUB
+    password: *********
     test-connection: true
     properties:
       mail:
