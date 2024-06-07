@@ -7,7 +7,7 @@ spring:
     # 编码集
     default-encoding: UTF-8
     #发送邮件的账户
-    username: 17888791667@163.com
+    username: ********
     #授权码
     password: *********
     test-connection: true
